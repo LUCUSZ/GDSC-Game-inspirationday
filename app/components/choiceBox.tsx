@@ -26,7 +26,11 @@ interface ChoiceBoxProps {
   onChoiceClick?: (choice: Choice) => void;
 }
 
-export default function ChoiceBox({ title, choices, onChoiceClick }: ChoiceBoxProps) {
+export default function ChoiceBox({
+  title,
+  choices,
+  onChoiceClick,
+}: ChoiceBoxProps) {
   return (
     <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md">
       <h2 className="mb-6 font-bold text-center text-lg text-purple-700">
@@ -52,13 +56,13 @@ export default function ChoiceBox({ title, choices, onChoiceClick }: ChoiceBoxPr
                 key={index}
                 onClick={() => onChoiceClick && onChoiceClick(choice)}
                 className="flex justify-center items-center bg-purple-600 hover:bg-purple-700 px-4 py-3 rounded-lg w-full font-semibold text-white"
-                aria-label={choice.alt}  // Accessible alternative text
+                aria-label={choice.alt} // Accessible alternative text
               >
-                <Image 
-                  src={choice.src} 
-                  alt={choice.alt} 
-                  width={50}  // Specify the width
-                  height={50}  // Specify the height
+                <Image
+                  src={choice.src}
+                  alt={choice.alt}
+                  width={50} // Specify the width
+                  height={50} // Specify the height
                   className="rounded-lg"
                 />
               </button>

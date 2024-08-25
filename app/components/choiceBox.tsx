@@ -28,7 +28,7 @@ interface ChoiceBoxProps {
 
 export default function ChoiceBox({ title, choices, onChoiceClick }: ChoiceBoxProps) {
   return (
-    <div className="bg-white opacity-90 shadow-md p-6 rounded-xl w-3/4 max-w-md">
+    <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md">
       <h2 className="mb-6 font-bold text-center text-lg text-purple-700">
         {title}
       </h2>

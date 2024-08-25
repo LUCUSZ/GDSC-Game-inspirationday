@@ -20,8 +20,8 @@ export default function ResultPage() {
   return (
     <div className="flex justify-center bg-white h-screen">
     <div
-      className="flex flex-col justify-center items-center bg-white bg-cover bg-center w-full max-w-md h-full"
-      style={{ backgroundImage: "url('/images/Magical_Record_Shop.png')" }}
+      className="flex flex-col justify-center items-center bg-white bg-opacity-70 bg-cover bg-center w-full max-w-md h-full"
+      style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}
     >
       <div className="flex flex-col items-center bg-white opacity-90 shadow-md p-6 rounded-xl w-3/4 max-w-md">
         <h1 className="mb-4 font-bold text-2xl text-center">Recommend: {personalityType}</h1>

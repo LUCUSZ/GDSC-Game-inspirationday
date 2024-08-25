@@ -216,7 +216,7 @@ export default function Home() {
       <div className="flex justify-center bg-white h-screen">
       <div
         className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
-        style={{ backgroundImage: "url('/images/Magical_Record_Shop.png')" }}
+        style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}
       >
           <ChoiceBox
               key={currentQuestion}

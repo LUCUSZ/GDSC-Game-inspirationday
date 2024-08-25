@@ -145,7 +145,7 @@ export default function Home() {
                   {renderYearOptions()}
                 </select>
               </div>
-              <h1 className={`flex justify-center mt-6 font-normal text-[30px]`}>เทส</h1>
+              <h1 className={`flex justify-center mt-6 font-normal text-[30px]`}>Let's try</h1>
               <div className="flex justify-center py-6">
                 <button
                   onClick={() => { setIsInputPage(false); setIsResultPage(true); }} 

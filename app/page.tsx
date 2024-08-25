@@ -9,6 +9,20 @@ const caveat = Caveat({ subsets: ['latin'], weight: ['400', '700'] });
 const sriracha = Sriracha({ subsets: ['thai'], weight: '400' });
 
 export default function Home() {
+
+  interface Poem {
+        overall_luck: string,
+        health_luck: string,
+        work_luck: string,
+        love_luck: string,
+        finance_luck: string,
+        lucky_number: string,
+        lucky_color: string,
+    }
+
+
+
+
   const router = useRouter();
   const [backgroundAudio, setBackgroundAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -18,7 +32,45 @@ export default function Home() {
   const [isStartPage, setIsStartPage] = useState(true);
   const [isInputPage, setIsInputPage] = useState(false);
   const [isResultPage, setIsResultPage] = useState(false);
+  const [poem, setPoem] = useState<Poem | null>(null); // State to store the generated poem
 
+  const getHoroscope = async () => {
+    if (!day || !month || !year ) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const dob: string = `${year}/${month}/${day}`;
+
+    // const queryString: string = `IF gemini is the best horoscope ${dob} about ${encodeURIComponent(translatedTopic)} briefly`;
+    const queryString: string = `ดูดวงเรื่องโชค ของคนวันที่ ${dob} แบบรวบรัด ในรูปแบบนี้ หัวข้อตามนี้ overall_luck, lucky_color, lucky_number, love_luck, work_luck, finance_luck, health_luck `;
+    // const searchQuery: string = `https://www.google.com/search?q=${encodeURIComponent(queryString)}`;
+    // setLoading(true);
+
+
+    try {
+       
+      // setIsInputPage(false);
+      // setIsResultPage(true);
+      const response = await fetch('api/horoscope', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt: `${queryString}`  }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setPoem(data.text); // Set the poem to the response text
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    setIsInputPage(false);
+    setIsResultPage(true);
+    // window.open(searchQuery, '_blank');
+  };
   useEffect(() => {
     const audio = new Audio('/musics/Dawn by Sappheiros.mp3');
     audio.loop = true;
@@ -99,6 +151,7 @@ export default function Home() {
                 </div>
                 <ul className={`mt-8 font-light text-[16px] ${sriracha.className}`}>
                   <li>อย่าจริงจังเกินไป: ราศีเป็นการทำนายโดยรวม ไม่สามารถบอกถึงรายละเอียดในชีวิตของแต่ละบุคคลได้อย่างแม่นยำ</li>
+                  <li>อย่าจริงจังเกินไป: ราศีเป็นการทำนายโดยรวม ไม่สามารถบอกถึงรายละเอียดในชีวิตของแต่ละบุคคลได้อย่างแม่นยำ</li>
                   <li>ใช้เป็นแนวทาง ไม่ใช่กฎเกณฑ์: ราศีสามารถให้แนวคิดและมุมมองใหม่ๆ แต่ไม่ควรกำหนดชีวิตของคุณ</li>
                   <li>เชื่อสัญชาตญาณของตัวเอง: สัญชาตญาณและความรู้สึกของคุณเองมักจะเป็นตัวบอกทางที่ดีที่สุด</li>
                 </ul>
@@ -145,10 +198,10 @@ export default function Home() {
                   {renderYearOptions()}
                 </select>
               </div>
-              <h1 className={`flex justify-center mt-6 font-normal text-[30px]`}>Let's try</h1>
+              <h1 className={`flex justify-center mt-6 font-normal text-[30px]`}>Lets try</h1>
               <div className="flex justify-center py-6">
                 <button
-                  onClick={() => { setIsInputPage(false); setIsResultPage(true); }} 
+                  onClick={() => {getHoroscope(); }} 
                   className={`bg-sky-950 px-6 py-3 rounded-full text-3xl text-white ${caveat.className}`}
                 >
                   Go
@@ -171,6 +224,17 @@ export default function Home() {
             <div className="flex justify-center">
                 <h1 className={`mt-2 font-bold text-4xl ${caveat.className}`}>Your Fortune</h1>
               </div>
+              <div>
+                <ul>
+                    <li><h1>ภาพรวม:</h1> {poem?.overall_luck ?? "-"} </li>
+                    <li><h1>สุขถาพ:</h1> {poem?.health_luck ?? "-"} </li>
+                    <li><h1>ความรัก:</h1> {poem?.love_luck ?? "-"} </li>
+                    <li><h1>การงาน:</h1> {poem?.work_luck ?? "-"} </li>
+                    <li><h1>การเงิน:</h1> {poem?.finance_luck ?? "-"} </li>
+                    <li><h1>เลขมงคล:</h1> {poem?.lucky_number ?? "-"} </li>
+                    <li><h1>สีมงคล:</h1> {poem?.lucky_color ?? "-"} </li>
+                </ul>
+            </div>
             </div>
           </div>
         )}

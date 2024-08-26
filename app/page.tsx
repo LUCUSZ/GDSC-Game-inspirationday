@@ -10,8 +10,8 @@ const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"] });
 const sriracha = Sriracha({ subsets: ["thai"], weight: "400" });
 
 const randomInt = (min: number, max: number): number => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 export default function Home() {
   interface Poem {
@@ -236,24 +236,44 @@ export default function Home() {
     <div>
       <div className="flex justify-center bg-white h-screen">
         {isStartPage && (
-
-          <div className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
-            style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}>
+          <div
+            className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
+            style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}
+          >
             <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-auto">
               <div className="justify-center">
                 <div className="flex justify-center">
-                  <h1 className={`mt-4 font-bold text-2xl ${sriracha.className}`}>🌟🎉 สวัสดีวัยรุ่นสายมู! 🎉🌟</h1>
+                  <h1
+                    className={`mt-4 font-bold text-2xl ${sriracha.className}`}
+                  >
+                    🌟🎉 สวัสดีวัยรุ่นสายมู! 🎉🌟
+                  </h1>
                 </div>
-                <ul className={`mt-5 font-light text-[16px] ${sriracha.className}`}>
-                  <li>คุณเคยสงสัยว่าดวงของคุณจะเป็นยังไงในวันนี้ หรืออยากรู้ว่าดวงความรักของคุณกำลังมีอะไรพิเศษเกิดขึ้นหรือเปล่า เราอาจมีคำตอบให้คุณ! ✨🔮</li>
-                  <li className="mt-2">และที่สำคัญ! การทำนายดวงของเราใช้เทคโนโลยี Gemini ผู้ช่วยที่ทำงานด้วยระบบ AI จาก Google</li>
-                  <li className="mt-2"><span className='underline'>ข้อแนะนำ</span>
+                <ul
+                  className={`mt-5 font-light text-[16px] ${sriracha.className}`}
+                >
+                  <li>
+                    คุณเคยสงสัยว่าดวงของคุณจะเป็นยังไงในวันนี้
+                    หรืออยากรู้ว่าดวงความรักของคุณกำลังมีอะไรพิเศษเกิดขึ้นหรือเปล่า
+                    เราอาจมีคำตอบให้คุณ! ✨🔮
+                  </li>
+                  <li className="mt-2">
+                    และที่สำคัญ! การทำนายดวงของเราใช้เทคโนโลยี Gemini
+                    ผู้ช่วยที่ทำงานด้วยระบบ AI จาก Google
+                  </li>
+                  <li className="mt-2">
+                    <span className="underline">ข้อแนะนำ</span>
                     <ul className="mx-10 mt-2 list-disc">
-                      <li>ดวงชะตาเป็นเพียงการแนะนำ อย่าลืมว่าเราคือผู้กำหนดชะตาชีวิตของเราเอง!</li>
+                      <li>
+                        ดวงชะตาเป็นเพียงการแนะนำ
+                        อย่าลืมว่าเราคือผู้กำหนดชะตาชีวิตของเราเอง!
+                      </li>
                       <li>อย่าให้มันกลายเป็นสิ่งที่กดดันหรือเครียดมากเกินไป</li>
-                      <li>คำทำนายเป็นเพียงแค่ข้อมูลเสริม การตัดสินใจของคุณเองคือสิ่งที่สำคัญที่สุด!</li>
+                      <li>
+                        คำทำนายเป็นเพียงแค่ข้อมูลเสริม
+                        การตัดสินใจของคุณเองคือสิ่งที่สำคัญที่สุด!
+                      </li>
                     </ul>
-
                   </li>
                 </ul>
               </div>
@@ -265,10 +285,11 @@ export default function Home() {
               </button>
               <div className="flex justify-center py-6">
                 <button
-
-                  onClick={() => { setIsStartPage(false); setIsInputPage(true); }} 
+                  onClick={() => {
+                    setIsStartPage(false);
+                    setIsInputPage(true);
+                  }}
                   className={`bg-sky-950 px-6 py-3 rounded-full text-xl text-white ${sriracha.className}`}
-
                 >
                   เริ่ม
                 </button>
@@ -277,14 +298,21 @@ export default function Home() {
           </div>
         )}
         {isInputPage && (
-
-          <div className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
-            style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}>
+          <div
+            className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
+            style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}
+          >
             <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-auto">
               <div className="flex justify-center">
-                <h1 className={`mt-4 font-bold text-4xl ${caveat.className}`}>Birth Horoscope</h1>
+                <h1 className={`mt-4 font-bold text-4xl ${caveat.className}`}>
+                  Birth Horoscope
+                </h1>
               </div>
-              <h1 className={`flex justify-center mt-6 font-normal text-[18px] ${sriracha.className}`}>ใส่วันเดือนปีเกิด</h1>
+              <h1
+                className={`flex justify-center mt-6 font-normal text-[18px] ${sriracha.className}`}
+              >
+                ใส่วันเดือนปีเกิด
+              </h1>
 
               <div className="flex justify-center mt-4">
                 <select
@@ -316,12 +344,17 @@ export default function Home() {
                 </select>
               </div>
 
-              <h1 className={`flex justify-center mt-6 font-normal text-[18px] ${sriracha.className}`}>พร้อมแล้วกดทำนาย</h1>
+              <h1
+                className={`flex justify-center mt-6 font-normal text-[18px] ${sriracha.className}`}
+              >
+                พร้อมแล้วกดทำนาย
+              </h1>
               <div className="flex justify-center py-6">
                 <button
-                  onClick={() => {getHoroscope(); }} 
+                  onClick={() => {
+                    getHoroscope();
+                  }}
                   className={`bg-sky-950 px-6 py-3 rounded-full text-xl text-white ${sriracha.className}`}
-
                 >
                   ทำนาย
                 </button>
@@ -357,36 +390,55 @@ export default function Home() {
             style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}
           >
             <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-auto">
-
               <div className="flex justify-center">
-                <h1 className={`mt-2 font-bold text-4xl ${caveat.className}`}>
-                  Your Fortune
+                <h1 className={`mt-2 font-bold text-4xl ${sriracha.className}`}>
+                  คำทำนาย
                 </h1>
               </div>
               <div>
-                <ul>
+                <ul className="text-xl mt-3">
                   <li>
-                    <h1>ภาพรวม:</h1> {poem?.overall_luck ?? isNullOverAll[randomInt(0,9)]}{" "}
+                    <h1>
+                      <span className="underline">ภาพรวม</span>:{" "}
+                      {poem?.overall_luck ?? isNullOverAll[randomInt(0, 9)]}
+                    </h1>{" "}
                   </li>
                   <li>
-                    <h1>สุขถาพ:</h1> {poem?.health_luck ?? isNullHealth[randomInt(0,9)]}{" "}
+                    <h1>
+                      <span className="underline">สุขถาพ</span>:{" "}
+                      {poem?.health_luck ?? isNullHealth[randomInt(0, 9)]}{" "}
+                    </h1>{" "}
                   </li>
                   <li>
-                    <h1>ความรัก:</h1> {poem?.love_luck ?? isNullLove[randomInt(0,9)]}{" "}
+                    <h1>
+                      <span className="underline">ความรัก</span>:{" "}
+                      {poem?.love_luck ?? isNullLove[randomInt(0, 9)]}
+                    </h1>{" "}
                   </li>
                   <li>
-                    <h1>การงาน:</h1> {poem?.work_luck ?? isNullWork[randomInt(0,9)]}{" "}
+                    <h1>
+                      <span className="underline">การงาน</span>:{" "}
+                      {poem?.work_luck ?? isNullWork[randomInt(0, 9)]}{" "}
+                    </h1>{" "}
                   </li>
                   <li>
-                    <h1>การเงิน:</h1> {poem?.finance_luck ?? isNullFinance[randomInt(0,9)]}{" "}
+                    <h1>
+                      <span className="underline">การเงิน</span>:{" "}
+                      {poem?.finance_luck ?? isNullFinance[randomInt(0, 9)]}{" "}
+                    </h1>{" "}
                   </li>
                   <li>
-                    <h1>เลขมงคล:</h1> {poem?.lucky_number ?? String(randomInt(0,99))}{" "}
+                    <h1>
+                      <span className="underline">เลขมงคล</span>:{" "}
+                      {poem?.lucky_number ?? String(randomInt(0, 99))}
+                    </h1>{" "}
                   </li>
                   <li>
-                    <h1>สีมงคล:</h1> {poem?.lucky_color ?? isNullColor[randomInt(0,9)]}{" "}
+                    <h1>
+                      <span className="underline">สีมงคล</span>:{" "}
+                      {poem?.lucky_color ?? isNullColor[randomInt(0, 9)]}
+                    </h1>{" "}
                   </li>
-
                 </ul>
               </div>
             </div>

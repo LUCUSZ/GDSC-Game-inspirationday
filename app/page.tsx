@@ -246,7 +246,7 @@ export default function Home() {
                   <h1
                     className={`mt-4 font-bold text-2xl ${sriracha.className}`}
                   >
-                    🌟🎉 สวัสดีวัยรุ่นสายมู! 🎉🌟
+                     สวัสดีวัยรุ่นสายมู! 🎉
                   </h1>
                 </div>
                 <ul
@@ -405,7 +405,7 @@ export default function Home() {
                   </li>
                   <li>
                     <h1>
-                      <span className="underline">สุขถาพ</span>:{" "}
+                      <span className="underline">สุขภาพ</span>:{" "}
                       {poem?.health_luck ?? isNullHealth[randomInt(0, 9)]}{" "}
                     </h1>{" "}
                   </li>

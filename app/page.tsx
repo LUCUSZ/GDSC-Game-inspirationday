@@ -125,7 +125,7 @@ export default function Home() {
     const dob: string = `${year}/${month}/${day}`;
 
     // const queryString: string = `IF gemini is the best horoscope ${dob} about ${encodeURIComponent(translatedTopic)} briefly`;
-    const queryString: string = `ดูดวงเรื่องโชค ของคนวันที่ ${dob} แบบรวบรัด ในรูปแบบนี้ หัวข้อตามนี้ overall_luck, lucky_color, lucky_number, love_luck, work_luck, finance_luck, health_luck `;
+    const queryString: string = `ดูดวงเรื่องโชค ของคนวันที่ ${dob}`;
     // const searchQuery: string = `https://www.google.com/search?q=${encodeURIComponent(queryString)}`;
     // setLoading(true);
 

@@ -144,16 +144,21 @@ export default function Home() {
         {isStartPage && (
           <div className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
             style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}>
-            <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-[500px]">
+            <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-auto">
               <div className="justify-center">
                 <div className="flex justify-center">
-                  <h1 className={`mt-8 font-bold text-4xl ${caveat.className}`}>GDSC Horoscope</h1>
+                  <h1 className={`mt-4 font-bold text-2xl ${sriracha.className}`}>🌟🎉 สวัสดีวัยรุ่นสายมู! 🎉🌟</h1>
                 </div>
-                <ul className={`mt-8 font-light text-[16px] ${sriracha.className}`}>
-                  <li>อย่าจริงจังเกินไป: ราศีเป็นการทำนายโดยรวม ไม่สามารถบอกถึงรายละเอียดในชีวิตของแต่ละบุคคลได้อย่างแม่นยำ</li>
-                  <li>อย่าจริงจังเกินไป: ราศีเป็นการทำนายโดยรวม ไม่สามารถบอกถึงรายละเอียดในชีวิตของแต่ละบุคคลได้อย่างแม่นยำ</li>
-                  <li>ใช้เป็นแนวทาง ไม่ใช่กฎเกณฑ์: ราศีสามารถให้แนวคิดและมุมมองใหม่ๆ แต่ไม่ควรกำหนดชีวิตของคุณ</li>
-                  <li>เชื่อสัญชาตญาณของตัวเอง: สัญชาตญาณและความรู้สึกของคุณเองมักจะเป็นตัวบอกทางที่ดีที่สุด</li>
+                <ul className={`mt-5 font-light text-[16px] ${sriracha.className}`}>
+                  <li>คุณเคยสงสัยว่าดวงของคุณจะเป็นยังไงในวันนี้ หรืออยากรู้ว่าดวงความรักของคุณกำลังมีอะไรพิเศษเกิดขึ้นหรือเปล่า เราอาจมีคำตอบให้คุณ! ✨🔮</li>
+                  <li className="mt-2">และที่สำคัญ! การทำนายดวงของเราใช้เทคโนโลยี Gemini ผู้ช่วยที่ทำงานด้วยระบบ AI จาก Google</li>
+                  <li className="mt-2"><span className='underline'>ข้อแนะนำ</span>
+                    <ul className="mx-10 mt-2 list-disc">
+                      <li>ดวงชะตาเป็นเพียงการแนะนำ อย่าลืมว่าเราคือผู้กำหนดชะตาชีวิตของเราเอง!</li>
+                      <li>อย่าให้มันกลายเป็นสิ่งที่กดดันหรือเครียดมากเกินไป</li>
+                      <li>คำทำนายเป็นเพียงแค่ข้อมูลเสริม การตัดสินใจของคุณเองคือสิ่งที่สำคัญที่สุด!</li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
               <button
@@ -165,9 +170,9 @@ export default function Home() {
               <div className="flex justify-center py-6">
                 <button
                   onClick={() => { setIsStartPage(false); setIsInputPage(true); }} 
-                  className={`bg-sky-950 px-6 py-3 rounded-full text-3xl text-white ${caveat.className}`}
+                  className={`bg-sky-950 px-6 py-3 rounded-full text-xl text-white ${sriracha.className}`}
                 >
-                  Start Quiz
+                  เริ่ม
                 </button>
               </div>
             </div>
@@ -176,11 +181,11 @@ export default function Home() {
         {isInputPage && (
           <div className="relative flex justify-center items-center bg-cover bg-center w-full max-w-md h-full"
             style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}>
-            <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-[500px]">
+            <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-auto">
               <div className="flex justify-center">
-                <h1 className={`mt-4 font-bold text-4xl ${caveat.className}`}>Daily Horoscope</h1>
+                <h1 className={`mt-4 font-bold text-4xl ${caveat.className}`}>Birth Horoscope</h1>
               </div>
-              <h1 className={`flex justify-center mt-6 font-normal text-[30px] ${caveat.className}`}>Enter your Date of Birth</h1>
+              <h1 className={`flex justify-center mt-6 font-normal text-[18px] ${sriracha.className}`}>ใส่วันเดือนปีเกิด</h1>
               <div className="flex justify-center mt-4">
                 <select className={`border-2 bg-gray-300 px-2 py-2 border-black rounded-lg text-lg ${caveat.className}`}
                   id="day" value={day} onChange={(e) => setDay(e.target.value)}>
@@ -198,13 +203,13 @@ export default function Home() {
                   {renderYearOptions()}
                 </select>
               </div>
-              <h1 className={`flex justify-center mt-6 font-normal text-[30px]`}>Lets try</h1>
+              <h1 className={`flex justify-center mt-6 font-normal text-[18px] ${sriracha.className}`}>พร้อมแล้วกดทำนาย</h1>
               <div className="flex justify-center py-6">
                 <button
                   onClick={() => {getHoroscope(); }} 
-                  className={`bg-sky-950 px-6 py-3 rounded-full text-3xl text-white ${caveat.className}`}
+                  className={`bg-sky-950 px-6 py-3 rounded-full text-xl text-white ${sriracha.className}`}
                 >
-                  Go
+                  ทำนาย
                 </button>
               </div>
               <button
@@ -222,17 +227,17 @@ export default function Home() {
             style={{ backgroundImage: "url('/images/GDSC_BGSea.jpg')" }}>
             <div className="bg-white bg-opacity-80 shadow-md p-6 rounded-xl w-3/4 max-w-md h-auto">
             <div className="flex justify-center">
-                <h1 className={`mt-2 font-bold text-4xl ${caveat.className}`}>Your Fortune</h1>
+                <h1 className={`mt-2 font-bold text-3xl ${sriracha.className}`}>คำทำนาย</h1>
               </div>
               <div>
-                <ul>
+                <ul className={`${sriracha.className}`}>
                     <li><h1>ภาพรวม:</h1> {poem?.overall_luck ?? "-"} </li>
                     <li><h1>สุขถาพ:</h1> {poem?.health_luck ?? "-"} </li>
                     <li><h1>ความรัก:</h1> {poem?.love_luck ?? "-"} </li>
                     <li><h1>การงาน:</h1> {poem?.work_luck ?? "-"} </li>
                     <li><h1>การเงิน:</h1> {poem?.finance_luck ?? "-"} </li>
-                    <li><h1>เลขมงคล:</h1> {poem?.lucky_number ?? "-"} </li>
-                    <li><h1>สีมงคล:</h1> {poem?.lucky_color ?? "-"} </li>
+                    <li><h1>เลขมงคล: {poem?.lucky_number ?? "-"}</h1></li>
+                    <li><h1>สีมงคล: {poem?.lucky_color ?? "-"}</h1></li>
                 </ul>
             </div>
             </div>
